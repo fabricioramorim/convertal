@@ -10,6 +10,19 @@ def generate_random_string(length=10):
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for i in range(length))
 
+# info API
+@app.route('/info', methods=['GET'])
+def info():
+    data = {
+        "name": "Convertal API",
+        "version": "1.0.0",
+        "description": "API Beta for Convertal, a free online image converter",
+    }
+    return jsonify(data)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
 # Route to convert images to PNG
 @app.route('/convert/png', methods=['POST'])
 def convert_to_png():
