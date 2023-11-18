@@ -20,4 +20,3 @@ jobs:
         REMOTE_HOST: ${{secrets.REMOTE_HOST_CONVERTAL}}
         REMOTE_USER: ${{secrets.REMOTE_USER_CONVERTAL}}
         TARGET: ${{secrets.TARGET_DIR_CONVERTAL}}
-        EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh"
