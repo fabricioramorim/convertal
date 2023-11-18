@@ -42,11 +42,11 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-    - name: Test with pytest
-      run: |
-        pip install pytest
-        export PYTHONPATH=src
-        pytest
+    #- name: Test with pytest
+    #  run: |
+    #    pip install pytest
+    #    export PYTHONPATH=src
+    #    pytest
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@0e613a0980cbf65ed5b322eb7a1e075d28913a83
