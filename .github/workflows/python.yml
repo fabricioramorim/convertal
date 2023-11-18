@@ -31,6 +31,15 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+    - id: deploy
+      uses: bitovi/github-actions-deploy-docker-to-ec2@v1.0.0
+      with:
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws_default_region: sa-east-1
+
+        aws_elb_app_port: 8080 # This should match the docker exposed port. Defaults to 3000.
     #- name: Test with pytest
     #  run: |
     #    pip install pytest
